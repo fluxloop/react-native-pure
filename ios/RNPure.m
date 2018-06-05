@@ -27,6 +27,7 @@ RCT_EXPORT_METHOD(stopTracking)
 
 RCT_EXPORT_METHOD(stopTrackingWithResponse:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject){
+    [Pure stopTracking];
     resolve(NULL);
 }
 
