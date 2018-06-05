@@ -1,7 +1,7 @@
 # Pure SDK - React Native Module
 
 ## Getting started
-> npm install --save-dev fluxloop/react-native-pure
+> npm install --save fluxloop/react-native-pure
 
 After installing the module, do the following:
 
