@@ -80,6 +80,14 @@ In XCode, in the project navigator, select your project. Add `libRNPure.a` to yo
 ## Usage
 ```javascript
 // TODO: How to import & use module
+
+// Preferred:
+import {Pure} from 'react-native-pure';
+Pure.methodName();
+
+// If the above does not work:
+import {NativeModules} from 'react-native';
+NativeModules.Pure.methodName();
 ```
 
 ## Available methods
