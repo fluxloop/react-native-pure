@@ -41,7 +41,7 @@ After installing the module, do the following:
     ```
 ### iOS
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-pure and add `RNPure.xcodeproj`
+2. Go to `node_modules` ➜ `react-native-pure` and add `RNPure.xcodeproj`
 In XCode, in the project navigator, select your project. Add `libRNPure.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 3. In the `ios` folder, create a file named `Podfile` with the following content, or merge into your existing `Podfile`:
   	```ruby
