@@ -1,0 +1,19 @@
+
+{
+  "name": "react-native-pure",
+  "version": "1.0.0",
+  "description": "React Native module for Pure SDK",
+  "main": "index.js",
+  "scripts": {
+  "keywords": [
+    "react-native",
+    "pure",
+    "sdk",
+    "fluxloop"
+  ],
+  "author": "kij",
+  "license": "",
+  "peerDependencies": {
+    "react-native": "^0.41.2"
+  }
+}
