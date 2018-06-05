@@ -1,4 +1,4 @@
-# react-native-pure
+# Pure SDK - React Native Module
 
 ## Getting started
 > npm install --save-dev fluxloop/react-native-pure
@@ -10,9 +10,9 @@ After installing the module, do the following:
   - Add `import com.fluxloop.react.pure.RNPurePackage;` to the imports at the top of the file
   - Add `new RNPurePackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
-  	```
+  	```groovy
   	include ':react-native-pure'
-  	project(':react-native-pure').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-pure/android')
+  	project(':react-native-pure').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-pure/android')
   	```
 3. Insert the following lines inside the allprojects > repositories block in `android/build.gradle`:
   	```groovy
@@ -32,7 +32,7 @@ After installing the module, do the following:
     }
   	```
   	*The USERNAME and PASSWORD will be provided by fluxLoop.*
-  	For more detailed overview on Android dependencies, click [here](fluxloop/pure-sdk/blob/master/Android/README.md).
+  	For more detailed overview on Android dependencies, click [here](https://github.com/fluxloop/pure-sdk/blob/master/Android/README.md).
   	
 4. Insert the following lines inside the dependencies block in `android/app/build.gradle``:
     ```groovy
@@ -75,6 +75,7 @@ In XCode, in the project navigator, select your project. Add `libRNPure.a` to yo
 ```objective-c
 [Pure startWithLaunchOptions:launchOptions];
 ````
+8. Click [here](https://github.com/fluxloop/pure-sdk/blob/master/iOS/README.md) for additional settings require
 
 ## Usage
 ```javascript
