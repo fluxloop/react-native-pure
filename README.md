@@ -83,5 +83,150 @@ In XCode, in the project navigator, select your project. Add `libRNPure.a` to yo
 ```
 
 ## Available methods
-TODO: Add available methods
+* [`init`](#init)
+* [`startTracking`](#startTracking)
+* [`startTrackingWithResponse`](#startTrackingWithResponse)
+* [`stopTracking`](#stopTracking)
+* [`stopTrackingWithResponse`](#stopTrackingWithResponse)
+* [`isTracking`](#isTracking)
+* [`getClientId`](#getClientId)
+* [`associateMetadata`](#associateMetadata)
+* [`associateMetadataWithForce`](#associateMetadataWithForce)
+* [`createEvent`](#createEvent)
+* [`createEventWithForce`](#createEventWithForce)
+
+<a name="init"></a>
+### init()
+* Android only - Promise returns undefined for iOS *
+
+The SDK is initialized automatically by default. If you need to override this behaviour, you can do this by adding the following metadata to your AndroidManifest:
+```xml
+ <meta-data android:name="com.pure.sdk.AutoInit" android:value="false" />
+```
+
+To then do your manual init of the SDK:
+```javascript
+Pure.init().then((res) => {
+  // do stuff based on response
+});
+```
+
+### startTracking()
+<a name="startTracking"></a>
+* Android only - Does not start tracking on iOS *
+
+Starts tracking of the users movement.
+The SDK stores the previous state, so you don't have to call Pure.startTracking() every time the app launches.
+```javascript
+Pure.startTracking();
+```
+
+### startTrackingWithResponse()
+<a name="startTrackingWithResponse"></a>
+* Android only - Promise returns undefined for iOS*
+
+Starts tracking of the users movement.
+The SDK stores the previous state, so you don't have to call Pure.startTrackingWithResponse() every time the app launches.
+```javascript
+Pure.startTrackingWithResponse().then((res) => {
+  // do stuff based on response
+});
+```
+
+### stopTracking()
+<a name="stopTracking"></a>
+
+Stops tracking of the users movement.
+```javascript
+Pure.stopTracking();
+```
+
+### stopTrackingWithResponse()
+<a name="stopTrackingWithResponse"></a>
+* Android only - Promise returns undefined for iOS, but still stops tracking *
+Stops tracking of the users movement.
+```javascript
+Pure.stopTracking().then((res) => {
+  // do stuff based on response
+});
+```
+
+### isTracking()
+<a name="isTracking"></a>
+* Android only - Promise returns undefined for iOS *
+
+Returns true if user is being tracked, false if not.
+```javascript
+Pure.isTracking().then((isTracked) => {
+  // do stuff based on response
+});
+```
+
+### getClientId()
+<a name="getClientId"></a>
+* Android only - Promise returns undefined for iOS *
+
+Returns the client ID.
+```javascript
+Pure.getClientId().then((id) => {
+  // do stuff based on response
+});;
+```
+
+### associateMetadata(string, json)
+<a name="associateMetadata"></a>
+
+Used to add metadata.
+The type has to be unique for each model you want to preserve.
+If sending userinfo, it could look something like this:
+```javascript
+const userInfo = {userId: 1234567, gender: 'male', 'birthYear': 1980};
+
+Pure.associateMetadata('UserInfo', userInfo).then((res) => {
+  // do stuff based on if response was success
+});
+```
+
+### associateMetadataWithForce(string, json, boolean)
+<a name="associateMetadataWithForce"></a>
+* Only for Android - Does not force on iOS, does a regular associateMetadata *
+Used to add metadata by force.
+Boolean in argument should be true for force, false for not.
+```javascript
+const userInfo = {userId: 1234567, gender: 'male', 'birthYear': 1980};
+
+Pure.associateMetadataWithForce('UserInfo', userInfo, true).then((res) => {
+  // do stuff based on if response was success
+});
+```
+
+### createEvent(string, json)
+<a name="createEvent"></a>
+
+Used to add an event.
+The name describes what kind of event this is.
+If sending order information, it could look something like this:
+```javascript
+const orderData = {userId: 1234567, orderId: 10001, 'timestamp': '2018-02-01T11:49:31+00:00'};
+
+Pure.createEvent('Order', orderData).then((res) => {
+  // do stuff based on if response was success
+});
+```
+
+### createEvent(string, json, boolean)
+<a name="createEvent"></a>
+* Only for Android - Does not force on iOS, does a regular createEvent *
+
+Used to add an event by force.
+The name describes what kind of event this is.
+If sending order information, it could look something like this:
+```javascript
+const orderData = {userId: 1234567, orderId: 10001, 'timestamp': '2018-02-01T11:49:31+00:00'};
+
+Pure.createEventWithForce('Order', orderData, true).then((res) => {
+  // do stuff based on if response was success
+});
+```
+
   
