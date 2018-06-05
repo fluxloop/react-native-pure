@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "React Native module for Pure SDK",
   "main": "index.js",
-  "scripts": {
   "keywords": [
     "react-native",
     "pure",
@@ -17,3 +16,5 @@
     "react-native": "^0.41.2"
   }
 }
+  
+  
