@@ -74,7 +74,7 @@ In XCode, in the project navigator, select your project. Add `libRNPure.a` to yo
 7. In `AppDelegate.m` find the method with the launchOptions, and add the following: 
 ```objective-c
 [Pure startWithLaunchOptions:launchOptions];
-````
+```
 8. Click [here](https://github.com/fluxloop/pure-sdk/blob/master/iOS/README.md) for additional settings required
 
 ## Usage
