@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FB0D86F20C6F1AC00F8E82F /* PureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB0D86E20C6F1AC00F8E82F /* PureSDK.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNPure.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNPure.m */; };
-		BB66622757772C6EF182A489 /* Pods_RNPure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AA03EA292DDC8CD5A15D93 /* Pods_RNPure.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,12 +24,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNPure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNPure.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FB0D86E20C6F1AC00F8E82F /* PureSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureSDK.framework; path = ../../demo/ios/Pods/PureSDK/PureSDK.framework; sourceTree = "<group>"; };
-		4A816A17E5D461D2C6811363 /* Pods-RNPure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNPure.debug.xcconfig"; path = "../../demo/ios/Pods/Target Support Files/Pods-RNPure/Pods-RNPure.debug.xcconfig"; sourceTree = "<group>"; };
-		730C4C9A7FA33B07CFDBF712 /* Pods-RNPure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNPure.release.xcconfig"; path = "../../demo/ios/Pods/Target Support Files/Pods-RNPure/Pods-RNPure.release.xcconfig"; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNPure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNPure.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNPure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNPure.m; sourceTree = "<group>"; };
-		C0AA03EA292DDC8CD5A15D93 /* Pods_RNPure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNPure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,8 +33,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FB0D86F20C6F1AC00F8E82F /* PureSDK.framework in Frameworks */,
-				BB66622757772C6EF182A489 /* Pods_RNPure.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,32 +47,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2FB0D86D20C6F1AB00F8E82F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2FB0D86E20C6F1AC00F8E82F /* PureSDK.framework */,
-				C0AA03EA292DDC8CD5A15D93 /* Pods_RNPure.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		358902190A5A2752A2874B74 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4A816A17E5D461D2C6811363 /* Pods-RNPure.debug.xcconfig */,
-				730C4C9A7FA33B07CFDBF712 /* Pods-RNPure.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
 				B3E7B5881CC2AC0600A0062D /* RNPure.h */,
 				B3E7B5891CC2AC0600A0062D /* RNPure.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				2FB0D86D20C6F1AB00F8E82F /* Frameworks */,
-				358902190A5A2752A2874B74 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,7 +224,6 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A816A17E5D461D2C6811363 /* Pods-RNPure.debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -269,7 +240,6 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 730C4C9A7FA33B07CFDBF712 /* Pods-RNPure.release.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
