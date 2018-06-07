@@ -1,20 +1,20 @@
-
 {
-  "name": "react-native-pure",
+  "name": "cordova-plugin-pinch",
   "version": "1.0.1",
   "description": "React Native module for Pure SDK",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fluxloop/react-native-pure.git"
+  },
   "keywords": [
     "react-native",
     "pure",
     "sdk",
     "fluxloop"
   ],
-  "author": "kij",
-  "license": "",
+  "author": "fluxLoop AS",
+  "license": "Apache-2.0",
   "peerDependencies": {
     "react-native": "^0.41.2"
   }
 }
-  
-  
