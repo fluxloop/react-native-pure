@@ -1,7 +1,7 @@
 # Pure SDK - React Native Module
 
 ## Getting started
-> npm install --save fluxloop/react-native-pure
+> npm install --save react-native-pure
 
 After installing the module, do the following:
 
@@ -46,26 +46,26 @@ After installing the module, do the following:
 4. In the `ios` folder, create a file named `Podfile` with the following content, or merge into your existing `Podfile`:
   	```ruby
   	workspace 'desiredWorkspaceName.xcworkspace'
-  	xcodeproj 'yourProjectName.xcodeproj'
-  	xcodeproj '../node_modules/react-native-pure/ios/RNPure.xcodeproj'
+  	project 'yourProjectName.xcodeproj'
+  	project '../node_modules/react-native-pure/ios/RNPure.xcodeproj'
   	
   	target 'yourAppName' do
       platform :ios, '10.0'
-      xcodeproj 'yourAppName.xcodeproj'
+      project 'yourAppName.xcodeproj'
       use_frameworks!
       pod 'PureSDK', :podspec => 'http://puresdk.azurewebsites.net/cocoapods/versions/latest?key=<PASSWORD>'
     end
     
     target 'RNPure' do
       platform :ios, '10.0'
-      xcodeproj '../node_modules/react-native-pure/ios/RNPure.xcodeproj'
+      project '../node_modules/react-native-pure/ios/RNPure.xcodeproj'
       use_frameworks!
       pod 'PureSDK', :podspec => 'http://puresdk.azurewebsites.net/cocoapods/versions/latest?key=<PASSWORD>'
     end
   	```
   	* *desiredWorkSpace*: Should be replaced with your desired name for a work space. If you already have a workspace, give it the same name.
   	* *yourProjectName*: Should be named exactly the same as your xcodeproj, which can be found in the `ios`folder.
-  	*  *<PASSWORD>* will be provided by fluxLoop.
+  	* *<PASSWORD>* will be provided by fluxLoop.
 
 5. Run `pod install` in the `ios` folder from a terminal window.
 5.1 *From now on, use the xcworkspace to work on the native iOS files*.
