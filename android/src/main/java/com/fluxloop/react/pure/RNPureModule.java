@@ -36,7 +36,7 @@ public class RNPureModule extends ReactContextBaseJavaModule {
     Pure.startTracking(new PureCallback<PureResult>() {
       @Override
       public void onCallback(PureResult pureResult) {
-        promise.resolve(pureResult);
+        promise.resolve(pureResult.getResultCode());
       }
     });
   }
@@ -51,7 +51,7 @@ public class RNPureModule extends ReactContextBaseJavaModule {
     Pure.stopTracking(new PureCallback<PureResult>() {
       @Override
       public void onCallback(PureResult pureResult) {
-        promise.resolve(pureResult);
+        promise.resolve(pureResult.getResultCode());
       }
     });
   }
@@ -77,7 +77,7 @@ public class RNPureModule extends ReactContextBaseJavaModule {
     Pure.init(getReactApplicationContext(), new PureCallback<PureResult>() {
       @Override
       public void onCallback(PureResult pureResult) {
-        promise.resolve(pureResult);
+        promise.resolve(pureResult.getResultCode());
       }
     });
   }
@@ -87,7 +87,7 @@ public class RNPureModule extends ReactContextBaseJavaModule {
     Pure.associateMetadata(type, data, new PureCallback<PureResult>() {
       @Override
       public void onCallback(PureResult pureResult) {
-        promise.resolve(pureResult);
+        promise.resolve(pureResult.getResultCode());
       }
     });
   }
@@ -97,7 +97,7 @@ public class RNPureModule extends ReactContextBaseJavaModule {
     Pure.associateMetadata(type, data, force, new PureCallback<PureResult>() {
       @Override
       public void onCallback(PureResult pureResult) {
-        promise.resolve(pureResult);
+        promise.resolve(pureResult.getResultCode());
       }
     });
   }
@@ -108,7 +108,7 @@ public class RNPureModule extends ReactContextBaseJavaModule {
     Pure.createEvent(type, data, new PureCallback<PureResult>() {
       @Override
       public void onCallback(PureResult pureResult) {
-        promise.resolve(pureResult);
+        promise.resolve(pureResult.getResultCode());
       }
     });
   }
@@ -118,24 +118,8 @@ public class RNPureModule extends ReactContextBaseJavaModule {
     Pure.createEvent(type, data, force, new PureCallback<PureResult>() {
       @Override
       public void onCallback(PureResult pureResult) {
-        promise.resolve(pureResult);
+        promise.resolve(pureResult.getResultCode());
       }
     });
   }
-
-  @ReactMethod
-  public void resultIsSuccess(PureResult pureResult, Promise promise) {
-    promise.resolve(pureResult.isSuccess());
-  }
-
-  @ReactMethod
-  public void resultGetMessage(PureResult pureResult, Promise promise) {
-    promise.resolve(pureResult.getMessage());
-  }
-
-  @ReactMethod
-  public void resultGetCode(PureResult pureResult, Promise promise) {
-    promise.resolve(pureResult.getResultCode());
-  }
-
 }
