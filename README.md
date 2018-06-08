@@ -65,7 +65,7 @@ After installing the module, do the following:
   	```
   	* *desiredWorkSpace*: Should be replaced with your desired name for a work space. If you already have a workspace, give it the same name.
   	* *yourProjectName*: Should be named exactly the same as your xcodeproj, which can be found in the `ios`folder.
-  	* *<PASSWORD>* will be provided by fluxLoop.
+  	* <PASSWORD> will be provided by fluxLoop.
 
 5. Run `pod install` in the `ios` folder from a terminal window.
 5.1 *From now on, use the xcworkspace to work on the native iOS files*.
@@ -79,15 +79,14 @@ After installing the module, do the following:
 
 ## Usage
 ```javascript
-// TODO: How to import & use module
 
-// Preferred:
-import {Pure} from 'react-native-pure';
-Pure.methodName();
+import { Pure, PureResult } from 'react-native-pure';
+Pure.startTrackingWithResponse((res) => {
+  if (res === PureResult.PURE_ENABLED) {
+    // do something
+  }
+});
 
-// If the above does not work:
-import {NativeModules} from 'react-native';
-NativeModules.Pure.methodName();
 ```
 
 ## Available methods
@@ -222,8 +221,8 @@ Pure.createEvent('Order', orderData).then((res) => {
 });
 ```
 
-### createEvent(string, json, boolean)
-<a name="createEvent"></a>
+### createEventWithForce(string, json, boolean)
+<a name="createEventWithForce"></a>
 * Only for Android - Does not force on iOS, does a regular createEvent *
 
 Used to add an event by force.
