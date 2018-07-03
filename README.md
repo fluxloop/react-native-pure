@@ -41,31 +41,33 @@ After installing the module, do the following:
     ```
 ### iOS
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-pure` and add `RNPure.xcodeproj`
+2. Go to `node_modules` ➜ `react-native-pure` ➜ `ios` and add `RNPure.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNPure.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. In the `ios` folder, create a file named `Podfile` with the following content, or merge into your existing `Podfile`:
   	```ruby
-  	workspace 'desiredWorkspaceName.xcworkspace'
+  	workspace 'yourProjectName.xcworkspace'
   	project 'yourProjectName.xcodeproj'
-  	project '../node_modules/react-native-pure/ios/RNPure.xcodeproj'
+    project '../node_modules/react-native-pure/ios/RNPure.xcodeproj'
+    
+    pod 'PureSDK', :podspec => 'http://puresdk.azurewebsites.net/cocoapods/versions/1.0.61?key=<PASSWORD>'
   	
   	target 'yourAppName' do
       platform :ios, '10.0'
       project 'yourAppName.xcodeproj'
       use_frameworks!
-      pod 'PureSDK', :podspec => 'http://puresdk.azurewebsites.net/cocoapods/versions/latest?key=<PASSWORD>'
     end
     
     target 'RNPure' do
       platform :ios, '10.0'
       project '../node_modules/react-native-pure/ios/RNPure.xcodeproj'
       use_frameworks!
-      pod 'PureSDK', :podspec => 'http://puresdk.azurewebsites.net/cocoapods/versions/latest?key=<PASSWORD>'
     end
   	```
   	* *desiredWorkSpace*: Should be replaced with your desired name for a work space. If you already have a workspace, give it the same name.
-  	* *yourProjectName*: Should be named exactly the same as your xcodeproj, which can be found in the `ios`folder.
-  	* <PASSWORD> will be provided by fluxLoop.
+  	* *yourProjectName*: Should be named exactly the same as your xcodeproj, which can be found in the `ios` folder.
+  	* *PASSWORD* will be provided by fluxLoop.
+
+    Include `pod 'PureSDKBluetooth', :podspec => 'https://puresdk.azurewebsites.net/cocoapods/bluetooth/versions/latest?key=<PASSWORD>` to collect Eddystone UID and Eddystone URL.
 
 5. Run `pod install` in the `ios` folder from a terminal window.
 5.1 *From now on, use the xcworkspace to work on the native iOS files*.
@@ -73,10 +75,9 @@ After installing the module, do the following:
 7. In `AppDelegate.m`, add the following with the other imports: `#import <PureSDK/Pure.h>`
 8. In `AppDelegate.m` find the method with the launchOptions, and add the following: 
 ```objective-c
-[Pure startWithLaunchOptions:launchOptions];
+[Pure initializeWithLaunchOptions:launchOptions];
 ```
-9. Click [here](https://github.com/fluxloop/pure-sdk/blob/master/iOS/README.md) for additional settings required
-
+9. Click [here](https://github.com/fluxloop/pure-sdk/blob/master/iOS/README.md) for additional settings required (Permissions).
 ## Usage
 ```javascript
 
@@ -104,7 +105,7 @@ Pure.startTrackingWithResponse((res) => {
 
 <a name="init"></a>
 ### init()
-* Android only - Promise returns undefined for iOS *
+*Android only - Promise returns undefined for iOS*
 
 The SDK is initialized automatically by default. If you need to override this behaviour, you can do this by adding the following metadata to your AndroidManifest:
 ```xml
@@ -120,7 +121,6 @@ Pure.init().then((res) => {
 
 ### startTracking()
 <a name="startTracking"></a>
-* Android only - Does not start tracking on iOS *
 
 Starts tracking of the users movement.
 The SDK stores the previous state, so you don't have to call Pure.startTracking() every time the app launches.
@@ -130,7 +130,7 @@ Pure.startTracking();
 
 ### startTrackingWithResponse()
 <a name="startTrackingWithResponse"></a>
-* Android only - Promise returns undefined for iOS*
+*Android only - Promise returns undefined for iOS*
 
 Starts tracking of the users movement.
 The SDK stores the previous state, so you don't have to call Pure.startTrackingWithResponse() every time the app launches.
@@ -150,7 +150,8 @@ Pure.stopTracking();
 
 ### stopTrackingWithResponse()
 <a name="stopTrackingWithResponse"></a>
-* Android only - Promise returns undefined for iOS, but still stops tracking *
+*Android only - Promise returns undefined for iOS, but still stops tracking*
+
 Stops tracking of the users movement.
 ```javascript
 Pure.stopTracking().then((res) => {
@@ -160,7 +161,6 @@ Pure.stopTracking().then((res) => {
 
 ### isTracking()
 <a name="isTracking"></a>
-* Android only - Promise returns undefined for iOS *
 
 Returns true if user is being tracked, false if not.
 ```javascript
@@ -171,7 +171,6 @@ Pure.isTracking().then((isTracked) => {
 
 ### getClientId()
 <a name="getClientId"></a>
-* Android only - Promise returns undefined for iOS *
 
 Returns the client ID.
 ```javascript
@@ -193,10 +192,10 @@ Pure.associateMetadata('UserInfo', userInfo).then((res) => {
   // do stuff based on if response was success
 });
 ```
-
+ß
 ### associateMetadataWithForce(string, json, boolean)
 <a name="associateMetadataWithForce"></a>
-* Only for Android - Does not force on iOS, does a regular associateMetadata *
+
 Used to add metadata by force.
 Boolean in argument should be true for force, false for not.
 ```javascript
@@ -223,7 +222,6 @@ Pure.createEvent('Order', orderData).then((res) => {
 
 ### createEventWithForce(string, json, boolean)
 <a name="createEventWithForce"></a>
-* Only for Android - Does not force on iOS, does a regular createEvent *
 
 Used to add an event by force.
 The name describes what kind of event this is.
