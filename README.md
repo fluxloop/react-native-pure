@@ -50,7 +50,7 @@ After installing the module, do the following:
   	target 'yourAppName' do
       platform :ios, '9.0' #minimum target for pure
       pod 'PureSDK', :podspec => 'http://puresdk.azurewebsites.net/cocoapods/versions/1.0.62?key=<PWD>'
-      pod 'RNPure', :podspec => '../node_modules/react-native-pure/ios'
+      pod 'RNPure', :path => '../node_modules/react-native-pure/ios'
     end
   	```
   	* *PWD* will be provided by fluxLoop.
