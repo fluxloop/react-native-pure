@@ -66,6 +66,7 @@ After installing the module, do the following:
 [Pure initializeWithLaunchOptions:launchOptions];
 ```
 9. Click [here](https://github.com/fluxloop/pure-sdk/blob/master/iOS/README.md) for additional settings required (Permissions).
+10. [`startTracking`](#startTracking) must be called to finish initializing the iOS SDK. This can either be done in AppDelegate.m with `[Pure startTracking]` after the init call, or be done with the aformentioned javascript function.
 ## Usage
 ```javascript
 
@@ -118,7 +119,7 @@ Pure.startTracking();
 
 ### startTrackingWithResponse()
 <a name="startTrackingWithResponse"></a>
-*Android only - Promise returns undefined for iOS*
+*Only Android returns a response, iOS returns undefined*
 
 Starts tracking of the users movement.
 The SDK stores the previous state, so you don't have to call Pure.startTrackingWithResponse() every time the app launches.
@@ -138,7 +139,7 @@ Pure.stopTracking();
 
 ### stopTrackingWithResponse()
 <a name="stopTrackingWithResponse"></a>
-*Android only - Promise returns undefined for iOS, but still stops tracking*
+*Only Android returns a response, iOS returns undefined*
 
 Stops tracking of the users movement.
 ```javascript
