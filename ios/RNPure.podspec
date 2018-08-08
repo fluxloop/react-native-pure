@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = "RNPure"
-  s.version     = "1.0.4"
+  s.version     = "1.0.9"
   s.homepage    = "http://fluxloop.com"
   s.summary     = "Pure wrapper for RN"
   s.license     = "MIT"
