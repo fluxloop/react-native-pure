@@ -16,6 +16,7 @@ RCT_EXPORT_METHOD(startTracking){
 
 RCT_EXPORT_METHOD(startTrackingWithResponse:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject){
+    [Pure startTracking];
     resolve(NULL);
 }
 
