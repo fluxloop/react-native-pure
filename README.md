@@ -39,6 +39,14 @@ After installing the module, do the following:
     compile project(':react-native-pure')
     compile fileTree(dir: "libs", include: ["*.jar"])
     ```
+    
+__IMPORTANT!__**
+If targeting play-services 15+, you have to also import the following dependencies:
+```groovy
+  implementation (“com.google.android.gms:play-services-ads:15.0.1”)
+  implementation (“com.google.android.gms:play-services-awareness:15.0.1")
+```
+
 ### iOS
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`.
 2. Go to `node_modules` ➜ `react-native-pure` ➜ `ios` and add `RNPure.xcodeproj`.
