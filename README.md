@@ -40,7 +40,7 @@ After installing the module, do the following:
     compile fileTree(dir: "libs", include: ["*.jar"])
     ```
     
-__IMPORTANT!__**
+_IMPORTANT!_**
 If targeting play-services 15+, you have to also import the following dependencies:
 ```groovy
   implementation (“com.google.android.gms:play-services-ads:15.0.1”)
