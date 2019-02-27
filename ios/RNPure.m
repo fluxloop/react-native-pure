@@ -26,7 +26,7 @@ RCT_EXPORT_METHOD(stopTracking)
     [Pure stopTracking];
 }
 
-    	RCT_EXPORT_METHOD(stopTrackingWithResponse:(RCTPromiseResolveBlock)resolve
+    RCT_EXPORT_METHOD(stopTrackingWithResponse:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject){
     [Pure stopTracking];
     resolve(NULL);
@@ -34,17 +34,20 @@ RCT_EXPORT_METHOD(stopTracking)
 
 RCT_EXPORT_METHOD(isTracking:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject){
-    BOOL isTracking = [Pure isTracking];
-    if (isTracking) {
-        resolve(@(YES));
-    } else {
-        resolve(@(NO));
-    }
+    [Pure isSDKTracking:^(BOOL isTracking) {
+        if (isTracking) {
+            resolve(@(YES));
+        } else {
+            resolve(@(NO));
+        }
+    }];
 }
 
 RCT_EXPORT_METHOD(getClientId:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject){
-    resolve([Pure pureId]);
+    [Pure fetchPureIdentifier:^(NSString * _Nullable pureIdentifier) {
+        resolve(pureIdentifier);
+    }];
 }
 
 RCT_EXPORT_METHOD(init:(RCTPromiseResolveBlock)resolve
