@@ -218,12 +218,7 @@
 					"$(SRCROOT)/../../../ios/Pods/PureSDK/Headers/**",
 					"$(SRCROOT)/../../../ios/Pods/PureSDKBluetooth/**",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../../../ios/Pods/Headers/**",
-					"$(SRCROOT)/../../../ios/Pods/PureSDK/**",
-					"$(SRCROOT)/../../../ios/Pods/PureSDKBluetooth/**",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNPure;
 				SKIP_INSTALL = YES;
@@ -248,12 +243,7 @@
 					"$(SRCROOT)/../../../ios/Pods/PureSDK/Headers/**",
 					"$(SRCROOT)/../../../ios/Pods/PureSDKBluetooth/**",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/../../../ios/Pods/Headers/**",
-					"$(SRCROOT)/../../../ios/Pods/PureSDK/**",
-					"$(SRCROOT)/../../../ios/Pods/PureSDKBluetooth/**",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNPure;
 				SKIP_INSTALL = YES;
