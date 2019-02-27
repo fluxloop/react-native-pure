@@ -60,8 +60,19 @@ If targeting play-services 15+, you have to also import the following dependenci
       use_frameworks!
       pod 'PureSDK', :podspec => 'https://puresdk.azurewebsites.net/cocoapods/versions/1.0.79?key=<PWD>'
       pod 'RNPure', :path => '../node_modules/react-native-pure/ios'
-      pod 'React', :path => '../node_modules/react-native'
       pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+      
+      # Include this for RN <= 0.46
+      pod 'React', path => '../node_modules/react-native'
+      
+      # Include this for RN >= 0.47
+      pod 'React', :path => '../node_modules/react-native', :subspecs => [
+        'Core',
+        'CxxBridge'
+      ]
+      pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/                 DoubleConversion.podspec'
+      pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+      pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
     end
   	```
   	* *PWD* will be provided by fluxLoop.
