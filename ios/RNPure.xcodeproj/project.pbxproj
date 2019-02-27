@@ -205,7 +205,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"${inherited}",
-					"$(SRCROOT)/../../../ios/Pods",
+					"$(SRCROOT)/../../../ios/Pods/**",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -216,7 +216,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../../ios/Pods",
+					"$(SRCROOT)/../../../ios/Pods/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNPure;
@@ -229,7 +229,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"${inherited}",
-					"$(SRCROOT)/../../../ios/Pods",
+					"$(SRCROOT)/../../../ios/Pods/**",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -240,7 +240,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../../ios/Pods",
+					"$(SRCROOT)/../../../ios/Pods/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNPure;
