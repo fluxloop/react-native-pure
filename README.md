@@ -52,7 +52,7 @@ If targeting play-services 15+, you have to also import the following dependenci
 2. Go to `node_modules` ➜ `react-native-pure` ➜ `ios` and add `RNPure.xcodeproj`.
 3. In XCode, in the project navigator, select your project.
 4. Add `libRNPure.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`.
-5. Under `Build Settings` ➜ `Search Paths` ➜ `Header Search Paths`, add `$(SRCROOT)/../node_modules/react-native-pure/ios` as non-recursive.
+5. Under `Build Settings` ➜ `Search Paths`, add `$(SRCROOT)/../node_modules/react-native-pure/ios` as non-recursive to `Header Search Paths` and `Framework Search Paths`.
 6. In the `ios` folder, create a file named `Podfile` with the following content, or merge into your existing `Podfile`:
   	```ruby
     target 'yourAppName' do
