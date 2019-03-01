@@ -146,13 +146,14 @@ Pure.startTracking();
 
 ### startTrackingWithResponse()
 <a name="startTrackingWithResponse"></a>
-*Only Android returns a response, iOS returns undefined*
 
 Starts tracking of the users movement.
 The SDK stores the previous state, so you don't have to call Pure.startTrackingWithResponse() every time the app launches.
 ```javascript
 Pure.startTrackingWithResponse().then((res) => {
-  // do stuff based on response
+  if (res === PureResult.PURE_ENABLED) {
+    // do stuff based on response
+  }
 });
 ```
 
@@ -166,12 +167,13 @@ Pure.stopTracking();
 
 ### stopTrackingWithResponse()
 <a name="stopTrackingWithResponse"></a>
-*Only Android returns a response, iOS returns undefined*
 
 Stops tracking of the users movement.
 ```javascript
 Pure.stopTracking().then((res) => {
-  // do stuff based on response
+  if (res === PureResult.PURE_DISABLED) {
+    // do stuff based on response
+  }
 });
 ```
 
