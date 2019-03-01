@@ -17,7 +17,13 @@ RCT_EXPORT_METHOD(startTracking){
 RCT_EXPORT_METHOD(startTrackingWithResponse:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject){
     [Pure startTracking];
-    resolve(NULL);
+    [Pure isSDKTracking:^(BOOL isTracking) {
+        if (isTracking) {
+            resolve(@(1));
+        } else {
+            resolve(@(2));
+        }
+    }];
 }
 
 
@@ -29,7 +35,13 @@ RCT_EXPORT_METHOD(stopTracking)
     RCT_EXPORT_METHOD(stopTrackingWithResponse:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject){
     [Pure stopTracking];
-    resolve(NULL);
+    [Pure isSDKTracking:^(BOOL isTracking) {
+        if (isTracking) {
+            resolve(@(1));
+        } else {
+            resolve(@(2));
+        }
+    }];
 }
 
 RCT_EXPORT_METHOD(isTracking:(RCTPromiseResolveBlock)resolve
