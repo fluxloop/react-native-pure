@@ -58,7 +58,7 @@ If targeting play-services 15+, you have to also import the following dependenci
     target 'yourAppName' do
       platform :ios, '9.0' #minimum target for pure
       use_frameworks!
-      pod 'PureSDK', :podspec => 'https://puresdk.azurewebsites.net/cocoapods/versions/1.0.79?key=<PWD>'
+      pod 'PureSDK', :podspec => 'https://puresdk.azurewebsites.net/cocoapods/versions/1.0.82?key=<PWD>'
       pod 'RNPure', :path => '../node_modules/react-native-pure/ios'
       pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
       
