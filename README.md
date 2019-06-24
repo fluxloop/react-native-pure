@@ -43,8 +43,8 @@ After installing the module, do the following:
 **_IMPORTANT!_**
 If targeting play-services 15+, you have to also import the following dependencies:
 ```groovy
-  implementation (“com.google.android.gms:play-services-ads:15.0.1”)
-  implementation (“com.google.android.gms:play-services-awareness:15.0.1")
+  implementation (“com.google.android.gms:play-services-ads-identifier”)
+  implementation (“com.google.android.gms:play-services-awareness")
 ```
 
 ### iOS
