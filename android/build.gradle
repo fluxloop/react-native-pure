@@ -41,6 +41,6 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile 'com.pure:sdk:1.2.26'
+    compile 'com.fluxloop.pure:pure-sdk:1.2.31'
 }
-  
+
